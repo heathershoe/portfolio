@@ -32,17 +32,37 @@ h1 {
 }
 
 h2{
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .nav a{
   margin: 10px;
   line-height: 1.5;
   color: #243151;
+
+}
+.nav ul{
+  border: 2px solid #243151;
+  padding: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.nav .active{
+.nav li {
+  text-align: center;
+  border-bottom: 2px solid #243151;
+  font-size: 18px;
+}
+
+.nav li:last-child{
+  border-bottom: none;
+}
+
+.nav li.active{
   background: #243151;
+
+}
+.nav li.active a{
   color: #a5d6f4;
 }
 
@@ -68,6 +88,9 @@ nav a:focus{
 .skip a:focus{
   top: 0px;
 }
+.about, .contact, .resume{
+  margin: 15px
+}
 
 /* contact form style */
 .bigicon {
@@ -79,37 +102,60 @@ form div{
     display:inline-block;
     width: 90%;
 }
-button.btn{             /*Why couldn't I just use button?*/
+button.btn{
     display: block;
     margin: 0 auto;
 }
 /* end form style */
 
-/* parallax image */
-/* code modified from https://www.w3schools.com/howto/howto_css_parallax.asp */
-.parallax {
-  color: white;
-  font-family: 'Vibur', cursive;
-  font-size: 50vh;
-  /* The image used */
-  background-image: url('../images/craterlake.jpg');
-
-  /* Full height */
-  height: 100vh;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.parallax{
+  display: none;
 }
-.about {
-  height: 100vh;
+
+.about, .resume{
+  margin: 30px
+}
+.resume ul li{
+  margin-left: 50px;
 }
 
 /* media queries */
-@media screen and (min-width:800px){
+@media screen and (min-width:750px){
+  .nav li{
+    display: inline;
+  }
+  .nav li {
+    text-align: center;
+    border-right: 2px solid #243151;
+    padding: 16px
+  }
+  .nav li:last-child{
+    border-right: none;
+  }
 
+  /* parallax image */
+  /* code modified from https://www.w3schools.com/howto/howto_css_parallax.asp */
+
+  .parallax {
+    display: block;
+    color: white;
+    font-family: 'Vibur', cursive;
+    font-size: 30vh;
+    /* The image used */
+    background-image: url('../images/craterlake.jpg');
+
+    /* Full height */
+    height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (min-width:1000px){
+/* add new grid layout */
 }
 /* media query for reduced animation */
 @media screen and (prefers-reduced-motion: reduce){
